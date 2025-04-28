@@ -22,8 +22,8 @@ def icp(source, target):
     # a perfect one-to-one correspondence match. Sometimes, many points will match to one point,
     # and other times, some points may not match at all.
 
-    #transform_matrix = np.asarray([[0.862, 0.011, -0.507, 0.5], [-0.139, 0.967, -0.215, 0.7], [0.487, 0.255, 0.835, -1.4], [0.0, 0.0, 0.0, 1.0]])
-    #source = source.transform(transform_matrix)
+    transform_matrix = np.asarray([[0.862, 0.011, -0.507, 0.5], [-0.139, 0.967, -0.215, 0.7], [0.487, 0.255, 0.835, -1.4], [0.0, 0.0, 0.0, 1.0]])
+    source = source.transform(transform_matrix)
 
     # While loop variables
     curr_iteration = 0
@@ -72,7 +72,7 @@ target = o3d.io.read_point_cloud(demo_icp_pcds.paths[1])
 #source = o3d.io.read_point_cloud("apple_4_4_201.pcd")
 #target = o3d.io.read_point_cloud("apple_4_4_203.pcd")
 
-    
+   
 o3d.io.write_point_cloud("source.ply", source)
 o3d.io.write_point_cloud("target.ply", target)
 
