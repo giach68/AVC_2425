@@ -14,7 +14,6 @@ curv = mesh.curvature(curv_type='mean')
 print(curv)
 
 mesh.plot(scalars=curv,
-    clim=[-0.5, 0.5],
     cmap='bwr',
     below_color='blue',
-    above_color='red',)
+    above_color='red',),
